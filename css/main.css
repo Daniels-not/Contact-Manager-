@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1rem;
+}
+
+:root {
+    --primary-color: hsl(217, 66%, 12%);
+    --secondary-color: hsl(0, 0%, 95%);
+    --secondary-text-color: #333;
+
+    --border-color: hsl(0, 0%, 80%);
+    --primary-hover-color: hsl(217, 63%, 15%);
+    --card-background-color: hsl(0, 0%, 96%);
+
+    --x_padding: 2rem;
+    --x_padding-responsive: 1rem;
+
+    --x_margin: 1.5rem;
+    --y_margin: 1rem;
+}
+
+.text-content {
+    text-overflow:ellipsis;
+    overflow:hidden;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+}
+
+
+/**HELP BTN STYLE */
+.nav-circle {
+    position: fixed;
+    z-index: 100;
+    user-select: none;
+    -webkit-user-select: none;
+    font-size: 2vh;
+    max-width: 4em;
+    height: 4em;
+    top: 1em;
+    left: 1em;
+    /* border-radius: 50%;
+    background-color: var(--primary-color);
+    color: var(--card-background-color); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.nav-circle.right {
+    left: initial;
+    right: 1em;
+}
+
+.nav-circle:hover{
+    background-color: var(--primary-hover-color);
+    transform: scale(1.1);
+}
+
+  /* Icon */
+
+.nav-circle img {
+    width: 100%;
+}
+
+/**HEADER STYLE */
+
+header {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    letter-spacing: 0.2rem;
+    font-weight: 500;
+}
+
+header h1 span {
+    display: block;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.5;
+    letter-spacing: 0.2rem;
+    padding-top: 0.8rem;
+    text-transform: uppercase;
+}
+
+
+/**FORM STYLE  */
+.container {
+    max-width: 42rem;
+    margin: 4.5rem auto;
+}
+
+input[type="text"], .submit{
+    width: 100%;
+    padding: 0.8rem 1.5rem;
+    margin: 1rem 0;
+    display: block;
+    border: 1px solid var(--border-color);
+    border-radius: 0.4rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.btn-primary {
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+    transition: all .2s ease-in-out;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover-color);
+}
+
+
+/**CARD DESIGN   */
+
+.card__container {
+    max-width: 90rem;
+    margin: 0 auto;
+    padding-left: var(--x_padding);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box {
+    display: flex;
+    height: 6.25rem;
+    width: 25rem;
+    margin-inline: var(--x_margin);
+    margin-block: var(--y_margin);
+    border-radius: 3.125rem;
+    background-color: var(--card-background-color);
+    box-shadow: 1px 5px 6px -3px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 1px 5px 6px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 5px 6px -3px rgba(0,0,0,0.75);
+    cursor: pointer;
+    transition: transform .4s;
+}
+
+.box:hover {
+    transform: scale(1.1);
+}
+
+.avatar {
+    background-image: url(https://www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png);
+    background-position: center;
+    background-size: 5rem;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 100%;
+    position: relative;
+    top: 0.6rem;
+    left: 0.6rem;
+    box-shadow : 0 0 4rem rgba(0,0,0,.25);
+}
+
+.content {
+    padding: 1rem;
+    margin: 1rem;
+    color: var(--secondary-text-color);
+}
+
+/**SCROLL TO TOP */
+.top-link {
+    transition: all 0.25s ease-in-out;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    display: inline-flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    margin: 0 3em 3em 0;
+    border-radius: 50%;
+    padding: 0.25em;
+    width: 80px;
+    height: 80px;
+    background-color: var(--card-background-color);
+}
+
+.top-link.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.top-link.hide {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.top-link svg {
+    fill: var(--primary-color);
+    width: 24px;
+    height: 12px;
+}
+
+.top-link:hover {
+    background-color: #e8e8e8;
+}
+
+.top-link:hover svg {
+    fill: var(--primary-color);
+}
+
+.screen-reader-text {
+    position: absolute;
+    clip-path: inset(50%);
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    word-wrap: normal !important;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+.screen-reader-text:focus {
+    display: block;
+    top: 5px;
+    left: 5px;
+    z-index: 100000;
+    clip-path: none;
+    background-color: var(--card-background-color);
+    padding: 15px 23px 14px;
+    width: auto;
+    height: auto;
+    text-decoration: none;
+    line-height: normal;
+    color: var(--primary-color);
+    font-size: 1em;
+    clip: auto !important;
+}
+
+#search__input {
+    background-image: url('https://www.w3schools.com/css/searchicon.png');
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px; /* Some extra padding top right bottom left;*/
+}
+
+#search__input img {
+    width: 10%;
+}
+
+
+/* Super Extra small devices (phones, 300px and down) */
+@media only screen and (max-width: 300px) {
+
+    .card__container {
+        padding-inline: 0.3rem;
+    }
+
+    .card__container .avatar {
+        display: none;
+    }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+    /* .card__container .avatar {
+        display: none;
+    } */
+
+    .text-content {
+        -webkit-line-clamp: 0.5;
+    }
+
+    header {
+        padding-inline: var(--x_padding-responsive);
+    }
+
+    .container {
+        padding-inline: var(--x_margin);
+    }
+
+    label {
+        font-size: 0.9rem;
+    }
+
+    .card__container {
+        padding-left: var(--x_padding-responsive);
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .container {
+        padding-inline: var(--x_margin);
+    }
+
+    .card__container {
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    label {
+        font-size: 1.2rem;
+    }
+
+    input[type="text"], .submit{
+        padding: 1.2rem 1.5rem;
+        margin: 1.1rem 0;
+    }
+
+    .card__container {
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    label {
+        font-size: 1.3rem;
+    }
+
+    input[type="text"], .submit{
+        padding: 1.3rem 1.5rem;
+        margin: 1.1rem 0;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    label {
+        font-size: 1.4rem;
+    }
+
+    input[type="text"], .submit{
+        padding: 1.4rem 1.5rem;
+        margin: 1.1rem 0;
+    }
+}
+

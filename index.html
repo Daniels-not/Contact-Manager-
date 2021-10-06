@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Agenda</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/784/784856.png" type="image/x-icon">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://kit.fontawesome.com/c159a44032.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <main class="main">
+            <header class="header">
+                <h1>Contact Manager
+                    <span>Created by Daniels-not</span>
+                </h1>
+            </header>
+            <div class="nav-circle user right" id="help">
+                <img src="img/bell.gif" alt="yellow bell with a ring animation">
+            </div>
+            <div class="container">
+                <form id="form">
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname" name="f_name" placeholder="Contact first name ...">
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname" name="l_name" placeholder="Contact last name ...">
+                    <label for="telephone">Telephone</label>
+                    <input type="text" id="telephone" name="telephone" placeholder="Contact phone number ...">
+                    <button class="submit btn-primary" id="submit">Add Contact</button>
+                </form>
+                <input type="text" id="search__input" onkeyup="mySearcher()" placeholder="Search for names..">
+            </div>
+            <div class="card__container" id="card__container">
+                <!-- <div class="box">
+                    <div class="avatar"></div>
+                    <div class="content">
+                        <p>
+                            John Doe <br>
+                            829 404 2222
+                        </p>
+                    </div>
+                </div> -->
+            </div>
+            <div class="goTotop">
+                <a class="top-link hide" href="" id="js-top">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6"><path d="M12 6H0l6-6z"/></svg>
+                    <span class="screen-reader-text">Back to top</span>
+                </a>
+            </div>
+        </main>
+        <script src="javascript/main.js"></script>
+        <script src="javascript/loadContacts.js"></script>
+        <script src="javascript/scrollTop.js"></script>
+        <script src="javascript/telephoneFormater.js"></script>
+        <script src="javascript/helpBottom.js"></script>
+    </body>
+</html>
