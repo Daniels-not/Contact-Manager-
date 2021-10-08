@@ -1,5 +1,5 @@
 # Contact Manager v0.0.1 🔥
-![](https://github.com/Daniels-not/Contact-Manager/blob/main/img/project/functionalities.PNG)
+![](https://github.com/Daniels-not/ITLA-Contact-Manager-/blob/main/img/project/functionalities.PNG)
 
 ## Instructions 📑
 
