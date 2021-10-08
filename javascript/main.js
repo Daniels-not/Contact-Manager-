@@ -42,20 +42,17 @@ submitButton.addEventListener('click', (e) => {
         telefono: telephone.value //telephone
     };
 
-    var data = new FormData(); //creating a new form data
-    data.append( "json", JSON.stringify( payload ) ); //adding the payload to the form data
-
     fetch("http://www.raydelto.org/agenda.php",
     {
         method: "POST",
-        body: data
+        body: JSON.stringify( payload ) //adding the payload to the form data
     })
     .then(function(res){ return res.json(); })
-    .then(function(data){
+    .then(function(payload){
         //alert( JSON.stringify( data ) )
         Swal.fire({
             icon: 'success',
-            text: 'Contact Added Successfully!, Good Job!',
+            text: 'Contact Added Successfully!, Reload the page to see the contact details.',
             width: 400,
             padding: '3em',
             backdrop: `
@@ -65,7 +62,7 @@ submitButton.addEventListener('click', (e) => {
                 no-repeat
             `
         })
-        console.log(data);
+        console.log(payload);
     })
     .catch(function(err){
         Swal.fire(
